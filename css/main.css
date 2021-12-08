@@ -1,0 +1,200 @@
+/* ================================= 
+	Variables
+==================================== */
+	:root {
+		--blue-color: #33B1FF;
+		--black-color: #000000;
+		--white-color: #ffffff;
+		--opaque-white-color: #ffffff99;
+
+
+		--max-width: 800px;
+	}
+
+/* ================================= 
+	Fonts
+==================================== */
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../assets/fonts/Gotham-Book.woff') format('woff'),
+        url('../assets/fonts/Gotham-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../assets/fonts/GothamMedium.woff') format('woff'),
+        url('../assets/fonts/GothamMedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../assets/fonts/Gotham-Bold.woff') format('woff'),
+        url('../assets/fonts/Gotham-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../assets/fonts/Gotham-ThinItalic.woff') format('woff'),
+        url('../assets/fonts/Gotham-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../assets/fonts/GothamMedium-Italic.woff') format('woff'),
+        url('../assets/fonts/GothamMedium-Italic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('../assets/fonts/GothamBlack.woff') format('woff'),
+        url('../assets/fonts/GothamBlack.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ================================= 
+	Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+	margin: 0;
+	background: var(--black-color);
+}
+
+body {
+	height: 100%;
+	margin: 0;
+	min-height: 100%;
+	font-family: 'Gotham';
+	color: var(--white-color);
+	font-weight: 900;
+	text-align: left;
+	background: rgb(17,146,232);
+	background: -moz-linear-gradient(30deg, rgba(17,146,232,1) 0%, rgba(96,79,201,1) 70%, rgba(96,79,201,1) 100%);
+	background: -webkit-linear-gradient(30deg, rgba(17,146,232,1) 0%, rgba(96,79,201,1) 70%, rgba(96,79,201,1) 100%);
+	background: linear-gradient(30deg, rgba(17,146,232,1) 0%, rgba(96,79,201,1) 70%, rgba(96,79,201,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1192e8",endColorstr="#604fc9",GradientType=1);
+	opacity: 0;
+	transition: opacity 1.5s ease-out;
+}
+
+.is-loaded {
+	opacity: 1;
+}
+
+main {
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+p {
+	margin: 0;
+}
+
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+}
+
+.max-width-container {
+	width: 100%;
+	padding: 30px;
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+.top-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	min-height: 30vh;
+	width: 100%;
+	background-image: url('../assets/images/textured-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: cover;
+}
+
+.top-container-text {
+	margin: 0 auto;
+}
+
+.gradient-container {
+	display: block;
+	width: 100%;
+	bottom: 0;
+}
+
+.weather-info {
+	display: block;
+	position: relative;
+	margin-top: 15px;
+}
+
+.weather-icon {
+	position: relative;
+	width: 160px;
+	display: block;
+	margin: auto;
+	min-height: 200px;
+}
+
+.weather-icon img {
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+.location {
+	font-size: 24px;
+	color: var(--blue-color);
+	line-height: 32px;
+}
+
+.date {
+	font-size: 19px;
+	line-height: 22px;
+	font-weight: 500;
+}
+
+.time {
+	font-size: 35px;
+	line-height: 41px;
+}
+
+.temperature {
+	font-size: 27px;
+	line-height: 32px;
+	margin-bottom: 20px;
+}
+
+.weather-description {
+	font-size: 18px;
+	line-height: 20px;
+	color: var(--opaque-white-color);
+}
