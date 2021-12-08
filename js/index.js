@@ -1,9 +1,15 @@
 const API_KEY = "5efbb2abf66e4da2be7e66b307e7df03";
+
+// Preferably I would set the longitude/latitude dynamically, but that seems to be out of the purview of this project
+// set for Boston
 let latitude = '42.360081';
 let longitude = '-71.058884';
 
+// set for New York to test diff
+// let latitude = '40.7128';
+// let longitude = '-74.0060';
+
 // DOM elements
-const body = document.querySelector('body');
 const locationData = document.querySelector('#location');
 const weekday = document.querySelector('#weekday');
 const month = document.querySelector('#month');
@@ -35,13 +41,13 @@ const formatAMPM = function(d) {
 	var minutes = d.getMinutes();
 	var ampm = hours >= 12 ? 'pm' : 'am';
 	hours = hours % 12;
-	hours = hours ? hours : 12; // the hour '0' should be '12'
+	hours = hours ? hours : 12;
 	minutes = minutes < 10 ? '0'+minutes : minutes;
 	var strTime = hours + ':' + minutes + ' ' + ampm;
 	return strTime;
 }
 
-// Set App
+// Set App data
 async function setApp() {
     let response = await fetch(`https://api.weatherbit.io/v2.0/current?lat=${latitude}&lon=${longitude}&key=${API_KEY}&units=imperial`);
 	
@@ -49,8 +55,9 @@ async function setApp() {
 		let data = await response.json();
 
 		// Add class to fade in app
-		body.classList.add('is-loaded');
+		document.body.classList.add('is-loaded');
 
+		// Preferably I would set the date/time dynamically as well, but that seems to be out of the purview of this project
 		// Set date/time
 		weekday.innerHTML = getWeekDay;
 		month.innerHTML = getMonthAbreviation;
@@ -66,7 +73,3 @@ async function setApp() {
 }
 
 setApp();
-
-
-
-
